@@ -4,9 +4,7 @@ const vec3 = require('vec3')
 var colors = require('colors');
 var config = require("./config.json")
 var prefix = config.prefix
-
 /* 
-
 0b0t Chat Colors
 ! yellow
 # pink
