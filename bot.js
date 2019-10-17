@@ -4,6 +4,7 @@ const vec3 = require('vec3')
 var colors = require('colors');
 var config = require("./config.json")
 var prefix = config.prefix
+
 /* 
 0b0t Chat Colors
 ! yellow
@@ -30,8 +31,6 @@ bindEvents(bot);
 navigatePlugin(bot);
 
 function bindEvents(bot) {
-
-
     function RussianRoulette() {
         let math = Math.floor(Math.random() * 7)
         if (math < 1) {
@@ -69,33 +68,16 @@ function bindEvents(bot) {
     }
 
     function isCCorp(username) {
-        array = ['Cody4687', 'Garmadon_Prime', 'heccinsucc', 'Zachere', 'DouglasJack', 'Distaf', 'HiImHappy', 'zxow', 'FINZO', 'decendium_', 'fallenangle1110', 'mrcurry45']
+        array = ['Cody4687']
         if (array.includes(username)) {
-            return(`true`)
+            return (`true`)
             return (username)
-        } else return(`false`)
+        } else return (`false`)
     }
-
 
     bot.on('login', function () {
         console.log(`Minecraft Bot Online!`.rainbow)
     });
-
-    
-    bot.on('login', () => {
-        var posone = new vec3();
-        var postwo = new vec3();
-        function one() {
-            bot.navigate.to(posone)
-            setTimeout(two, 20000)
-        }
-        function two() {
-            bot.navigate.to(postwo)
-            setTimeout(one, 20000)
-        }
-        setTimeout(one, 10000)
-    });
-
 
     bot.on('error', function (err) {
         console.log('Error attempting to reconnect: ' + err.errno + '.');
@@ -134,6 +116,9 @@ function bindEvents(bot) {
             bot.chat(`/tpy ${isAllowed(username)}`)
         }
 
+        if (cmd === `${prefix}help`) {
+            chat(`/w ${username} tiny.cc/CCorpHelp`, `${username} used ${prefix}help`.magenta)
+        }
 
         if (cmd === `${prefix}russianroulette`) {
             chat(`${RussianRoulette()}`, `${username} used ${prefix}russianroulette.`.yellow)
@@ -146,7 +131,7 @@ function bindEvents(bot) {
         if (cmd === `${prefix}tpa`) {
             chat(`/tpa Cody4687`, `Bot tpa'd to Cody4687.`.green)
         }
-        
+
         if (cmd === `${prefix}test`) {
             console.log(bot.players)
         }
