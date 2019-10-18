@@ -4,18 +4,9 @@ const vec3 = require('vec3')
 var colors = require('colors');
 var config = require("./config.json")
 var prefix = config.prefix
-
 /* 
 0b0t Chat Colors
-! yellow
-# pink
-> green
-< red
-, orange
-; dark blue
-: light blue
-[ gray
-] black
+! yellow, # pink, > green, < red, , orange, ; dark blue, : light blue, [ gray, ] black
 */
 var options = {
     host: "0b0t.org",
@@ -48,31 +39,16 @@ function bindEvents(bot) {
     }
 
     function chat(b, c) {
-        bot.chat(b)
+        bot.chat(`b`)
         console.log(c)
     }
 
     function isAllowed(username) {
-        array = ['Cody4687', 'Garmadon_Prime', 'heccinsucc', 'Zachere', 'DouglasJack', 'Distaf', 'HiImHappy', 'zxow']
+        array = ['Cody4687']
         if (array.includes(username)) {
             chat(`> Accepted tpa for ${username}.`, `Accepted tpa for ${username}.`.green)
             return (username)
         } else return chat(`< ${username} is not on the list!`, `${username} attempted to tpa.`.red)
-    }
-
-    function isCody(username) {
-        array = ['Cody4687']
-        if (array.includes(username)) {
-            return (username)
-        } else return chat(`< You're not on the list, ${username}!`, `${username} attempted an admin command.`.red)
-    }
-
-    function isCCorp(username) {
-        array = ['Cody4687']
-        if (array.includes(username)) {
-            return (`true`)
-            return (username)
-        } else return (`false`)
     }
 
     bot.on('login', function () {
