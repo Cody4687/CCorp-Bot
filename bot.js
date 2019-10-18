@@ -5,7 +5,7 @@ var colors = require('colors');
 var config = require("./config.json")
 var prefix = config.prefix
 /* 
-0b0t Chat Colors
+0b0t Chat Colors (ignore)
 ! yellow, # pink, > green, < red, , orange, ; dark blue, : light blue, [ gray, ] black
 */
 var options = {
