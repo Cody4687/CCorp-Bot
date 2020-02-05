@@ -8,4 +8,5 @@ Commands:
 !ping <usernaem> - Pong! Gives yours or someone elses ping in ms format.
 !russianroulette - Play russian roulette. 
 !tpa - Admin Command.
+!tps - Gives server TPS.
 !uuid <username> - Gives yours or someone elses uuid.
